@@ -77,12 +77,6 @@
 }
 
 // Media
-// @media only screen and (max-width: 1200px) {
-//   .intro {
-//     background-position: 50px 50px;
-//   }
-// }
-
 @include media(lg) {
   .intro__content {
 
@@ -95,6 +89,7 @@
 
 @include media(sm) {
   .intro {
+    padding-top: 150px;
     padding-bottom: 50px;
   }
 

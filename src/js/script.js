@@ -31,11 +31,13 @@ let enableScroll = function () {
 
 // Burger menu
 const burger = document.querySelector('.header__burger');
+const burgerClose = document.querySelector('.header__burger-close');
 const menu = document.querySelector('.header__menu');
 
 const openMenu = () => {
-  menu.classList.toggle('active');
-  burger.classList.toggle('active');
+  menu.classList.add('active');
+  burger.classList.add('active');
+  burgerClose.classList.add('active');
   disableScroll();
 }
 
@@ -44,49 +46,77 @@ burger.addEventListener('click', openMenu);
 const closeMenu = () => {
   menu.classList.remove('active');
   burger.classList.remove('active');
+  burgerClose.classList.remove('active');
   enableScroll();
 }
+
+burgerClose.addEventListener('click', closeMenu);
 
 const menuItem = document.querySelectorAll('.menu_link');
 
 menuItem.forEach(el => el.addEventListener('click', closeMenu));
 
 // Модальное окно
-const headerLogin = document.querySelector('.header__login');
-const headerRegister = document.querySelector('.header__register');
-const modal = document.querySelector('.modal');
+const authorization = document.querySelector('.header__authorization');
+const modal = document.querySelectorAll('.modal');
+const modalLogin = document.querySelector('.modal-login');
 const modalRegister = document.querySelector('.modal-register');
 const modalClose = document.querySelectorAll('.modal_close');
-const overlay = document.querySelector('.overlay');
 
-const openModal = () => {
-  modal.classList.add('active');
+const openModal = (modalName) => {
+  modalName.classList.add('active');
+  closeMenu();
   disableScroll();
 
   menu.classList.remove('active');
   burger.classList.remove('active');
 }
 
-headerLogin.addEventListener('click', openModal);
+authorization.addEventListener('click', (event) => {
+  const target = event.target;
 
-const openModalRegister = () => {
-  modalRegister.classList.add('active');
-  disableScroll();
+  if (target.classList.contains('header__login')) {
+    openModal(modalLogin);
+  }
 
-  menu.classList.remove('active');
-  burger.classList.remove('active');
+  if (target.classList.contains('header__register')) {
+    openModal(modalRegister);
+  }
+});
+
+const closeModal = (modalName) => {
+  modalName.classList.remove('active');
+  closeMenu();
 }
 
-headerRegister.addEventListener('click', openModalRegister);
+modalClose.forEach(elem => {
+  elem.addEventListener('click', (event) => {
+    const parent = elem.parentNode.parentNode;
 
-const closeModal = () => {
-  modal.classList.remove('active');
-  modalRegister.classList.remove('active');
-  enableScroll();
-}
+    if (parent.classList.contains('modal-login')) {
+      closeModal(modalLogin);
+    }
 
-modalClose.forEach(el => el.addEventListener('click', closeModal));
-overlay.addEventListener('click', closeModal);
+    if (parent.classList.contains('modal-register')) {
+      closeModal(modalRegister);
+    }
+  })
+});
+
+modal.forEach(elem => {
+  elem.addEventListener('click', (event) => {
+    const target = event.target;
+
+    if (target.classList.contains('modal-login')) {
+      closeModal(modalLogin);
+    }
+
+    if (target.classList.contains('modal-register')) {
+      closeModal(modalRegister);
+    }
+  })
+});
+
 
 // Плавный скролл 
 document.querySelectorAll('a[href^="#"').forEach(link => {

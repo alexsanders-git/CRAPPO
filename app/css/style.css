@@ -228,34 +228,63 @@ ul {
   background: #3671E9;
 }
 
-.header__burger.active span:nth-child(1) {
-  top: 0;
-  -webkit-transform: translateX(35%);
-      -ms-transform: translateX(35%);
-          transform: translateX(35%);
-  opacity: 0;
+.header__burger.active {
+  display: none;
 }
 
-.header__burger.active span:nth-child(2) {
+.header__burger-close {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+  border-radius: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: "inline-block";
+  display: none;
+  position: relative;
+  width: 34px;
+  height: 26px;
+  cursor: pointer;
+  border: none;
+  outline: 0;
+  background: 0 0;
+}
+
+.header__burger-close span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3.33px;
+  background: #FFF;
+  border-radius: 3px;
+  -webkit-transition: .2s linear;
+  -o-transition: .2s linear;
+  transition: .2s linear;
+}
+
+.header__burger-close span:nth-child(1) {
   top: 50%;
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
-.header__burger.active span:nth-child(3) {
+.header__burger-close span:nth-child(2) {
   top: 50%;
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
 
-.header__burger.active span:nth-child(4) {
-  top: 100%;
-  -webkit-transform: translateX(-35%);
-      -ms-transform: translateX(-35%);
-          transform: translateX(-35%);
-  opacity: 0;
+.header__burger-close:hover span {
+  background: #3671E9;
+}
+
+.header__burger-close.active {
+  display: block;
 }
 
 .header__authorization button {
@@ -1251,7 +1280,7 @@ ul {
   border-radius: 10px;
   -webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
           box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
-  padding: 50px 30px 30px 30px;
+  padding: 30px;
 }
 
 .modal_wrapper h2 {
@@ -1267,6 +1296,10 @@ ul {
 
 .modal__form {
   color: #555;
+}
+
+.modal__form h2 {
+  margin-top: 25px;
 }
 
 .modal__social_wrapper {
@@ -1739,6 +1772,7 @@ ul {
   }
 
   .intro {
+    padding-top: 150px;
     padding-bottom: 50px;
   }
 
@@ -1866,6 +1900,7 @@ ul {
   }
 
   .modal__form h2 {
+    margin-top: 45px;
     font-size: 25px;
   }
 
