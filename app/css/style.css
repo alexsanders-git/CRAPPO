@@ -1216,7 +1216,7 @@ ul {
 }
 
 .modal {
-  padding: 0 15px;
+  padding: 25px;
   position: fixed;
   left: 0;
   top: 0;
@@ -1230,6 +1230,8 @@ ul {
       -ms-flex-pack: center;
           justify-content: center;
   z-index: 3;
+  overflow-y: auto;
+  background-color: rgba(19, 19, 20, 0.9);
 }
 
 .modal.active {
@@ -1239,6 +1241,7 @@ ul {
 }
 
 .modal_wrapper {
+  margin: auto;
   background-color: #FFF;
   border-radius: 16px;
   overflow: hidden;
