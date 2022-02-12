@@ -1,0 +1,80 @@
+.benefits {
+  padding: 100px 0;
+  position: relative;
+
+  &::before {
+    content: '';
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.08) 24.01%, rgba(53, 6, 140, 0.01) 71.35%);
+    transform: rotate(-30deg);
+    width: 230px;
+    height: 115px;
+    border-radius: 50% 50% 50% 50% / 0% 0% 100% 100%;
+    display: inline-block;
+    position: absolute;
+    right: -70px;
+    top: -70px;
+  }
+
+  &::after {
+    content: '';
+    background: url("../img/svg/arc.svg") no-repeat 50%;
+    width: 240px;
+    height: 240px;
+    display: inline-block;
+    position: absolute;
+    right: -60px;
+    bottom: -100px;
+  }
+}
+
+.benefits__inner {
+  display: flex;
+  align-items: center;
+  column-gap: 100px;
+}
+
+.benefits__content {
+  max-width: 480px;
+
+  h2 {
+    margin-bottom: 24px;
+  }
+
+  p {
+    max-width: 400px;
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+    color: $gray;
+  }
+}
+
+// Media
+@include media(lg) {
+  .benefits__inner {
+    column-gap: 25px;
+  }
+}
+
+@include media(md) {
+  .benefits__inner {
+    flex-direction: column;
+  }
+
+  .benefits__img {
+    margin-bottom: 50px;
+  }
+}
+
+@include media(sm) {
+  .benefits {
+    &::after {
+      bottom: -150px;
+    }
+  }
+
+  .benefits__content {
+    text-align: center;
+  }
+}

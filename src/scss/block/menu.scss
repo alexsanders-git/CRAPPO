@@ -1,0 +1,53 @@
+.menu {
+  margin-right: 55px;
+}
+
+.menu__list {
+  display: flex;
+}
+
+.menu__item {
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.01em;
+
+  &:not(:last-child) {
+    margin-right: 32px;
+  }
+}
+
+.menu_link {
+  position: relative;
+  transition: color .2s linear;
+
+  &::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: $light-blue;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    z-index: 1;
+    transition: width .2s linear;
+  }
+
+  &:hover {
+    color: $light-blue;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+// Media
+@include media(lg) {
+  .menu {
+    margin-right: 40px;
+  }
+
+  .menu__item {
+    font-size: 18px;
+  }
+}

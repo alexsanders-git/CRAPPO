@@ -1,0 +1,55 @@
+.payment-systems__title {
+  max-width: 355px;
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 150%;
+  color: $white;
+}
+
+.payment-systems__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment-systems__item {
+  width: 96px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  background-color: rgba($gray, 0.05);
+  border-radius: 8px;
+  transition: background-color .2s linear;
+
+  &:not(:last-child) {
+    margin-right: 24px;
+  }
+
+  &:hover {
+    background-color: rgba($gray, 0.2);
+
+    .payment-systems__img {
+      filter: grayscale(0);
+    }
+  }
+}
+
+.payment-systems__img {
+  filter: grayscale(100%);
+  transition: filter .2s linear;
+}
+
+// Media
+@media only screen and (max-width: 400px) {
+  .payment-systems__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .payment-systems__item {
+    &:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 24px;
+    }
+  }
+}

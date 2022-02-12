@@ -1,0 +1,75 @@
+.statistic {
+  color: $white;
+}
+
+.statistic__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.statistic__item {
+  position: relative;
+  padding-left: 100px;
+
+  &::before {
+    content: '';
+    border-radius: 50%;
+    background: transparentize($white, 0.9) url("../img/svg/statistic.svg") no-repeat 50%;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &:nth-child(2) {
+    &::before {
+      background: transparentize($white, 0.9) url("../img/svg/man.svg") no-repeat 50%;
+    }
+  }
+
+  &:nth-child(3) {
+    &::before {
+      background: transparentize($white, 0.9) url("../img/svg/world.svg") no-repeat 50%;
+    }
+  }
+
+}
+
+.statistic__descriptions {
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.01em;
+  color: $gray;
+}
+
+// Media 
+@include media(md) {
+  .statistic {
+    padding-top: 30px;
+  }
+
+  .statistic__item {
+    padding-left: 0;
+    text-align: center;
+
+    &::before {
+      position: inherit;
+    }
+  }
+}
+
+@include media(sm) {
+  .statistic {
+    padding: 50px 0;
+  }
+
+  .statistic__inner {
+    flex-direction: column;
+  }
+
+  .statistic__item:not(:last-child) {
+    margin-bottom: 50px;
+  }
+}

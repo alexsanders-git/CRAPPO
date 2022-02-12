@@ -1,0 +1,56 @@
+.social_link {
+  display: flex;
+}
+
+.social_link__item {
+  &:not(:last-child) {
+    margin-right: 32px;
+  }
+}
+
+.social_link__link {
+  font-size: 24px;
+}
+
+
+.social_link--facebook {
+  transition: color .2s linear;
+
+  &:hover {
+    color: #3b5998;
+  }
+}
+
+.social_link--instagram {
+  transition: color .2s linear;
+
+  &:hover {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.social_link--youtube {
+  transition: color .2s linear;
+
+  &:hover {
+    color: #ff0000;
+  }
+}
+
+.social_link--twitter {
+  transition: color .2s linear;
+
+  &:hover {
+    color: #1da1f2;
+  }
+}
+
+.social_link--linkedin {
+  transition: color .2s linear;
+
+  &:hover {
+    color: #0e76a8;
+  }
+}

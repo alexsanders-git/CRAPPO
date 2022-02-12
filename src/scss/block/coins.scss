@@ -1,0 +1,157 @@
+.coins {
+  padding: 300px 0 100px;
+  background: linear-gradient(180deg, #F8F9FB 0%, #FAFBFF 100%);
+  color: $black;
+}
+
+.coins__inner {
+  margin-bottom: 64px;
+  text-align: center;
+
+  h2 {
+    max-width: 740px;
+    margin: 0 auto;
+  }
+}
+
+.coins__items {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 45px;
+}
+
+.coins__item {
+  max-width: 370px;
+  width: 100%;
+  padding: 50px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: $white;
+  border-radius: 16px;
+  transition: color .2s linear, background .2s linear;
+
+  &:hover {
+    color: $white;
+    background: #2B076E;
+    backdrop-filter: blur(250px);
+
+    .coins__title {
+      span {
+        color: $white;
+      }
+    }
+
+    .coins__btn {
+      width: 217px;
+      height: 64px;
+
+      font-family: 'Rubik', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      text-align: center;
+      color: $white;
+
+      padding: 14px 24px;
+      background: $light-blue;
+      border: 2px solid transparent;
+      border-radius: 32px;
+
+      // &::after {
+      //   content: '';
+      //   background: url("../img/svg/arrow-blue.svg") no-repeat 50%;
+      //   width: 32px;
+      //   height: 32px;
+      //   display: inline-block;
+      //   vertical-align: middle;
+      //   margin-left: 24px;
+      // }
+    }
+  }
+}
+
+.coins__img {
+  max-width: 80px;
+  max-height: 80px;
+  margin-bottom: 48px;
+}
+
+.coins__title {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  column-gap: 8px;
+  align-items: center;
+  transition: color .2s linear;
+
+  h3 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 150%;
+  }
+
+  span {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    color: #BDBDBD;
+    display: block;
+    transition: color .4s linear;
+  }
+}
+
+.coins__descriptions {
+  margin-bottom: 25px;
+}
+
+.coins__btn {
+  @include no-btn;
+
+  width: 64px;
+  height: 64px;
+  margin: auto 0 0 0;
+  color: transparent;
+  background: url(../img/svg/arrow-big.svg) no-repeat 50%;
+  background-color: $white;
+  border: 2px solid rgba(43, 7, 110, 0.2);
+  border-radius: 50px;
+  transition: all .2s linear;
+
+  &::after {
+    content: none;
+  }
+}
+
+// Media
+@media only screen and (max-width: 950px) {
+  .coins__items {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 45px;
+  }
+
+  .coins__item {
+    max-width: 550px;
+  }
+}
+
+@include media(md) {
+  .coins {
+    padding-top: 400px;
+  }
+}
+
+@include media(sm) {
+  .coins {
+    padding-top: 450px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .coins {
+    padding-top: 550px;
+  }
+}

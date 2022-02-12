@@ -1,0 +1,106 @@
+// Основні стилі
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    color: $white;
+    background-color: #0D0D2B;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1190px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    // Media
+    @include media(lg) {
+        padding: 0 20px;
+    }
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
+.btn-blue {
+    @include no-btn;
+
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    color: $white;
+
+    padding: 14px 24px;
+    background: $light-blue;
+    border: 2px solid transparent;
+    border-radius: 32px;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        border-color: $light-blue;
+        background-color: transparent;
+        color: $light-blue;
+        transition: all .3s ease-in-out;
+        transform: scale(1.1);
+    }
+}
+
+.btn-white {
+    @include no-btn;
+
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    color: $black;
+
+    padding: 14px 24px;
+    background: $white;
+    border: 2px solid transparent;
+    border-radius: 32px;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        border-color: $white;
+        background-color: transparent;
+        color: $white;
+        transition: all .3s ease-in-out;
+        transform: scale(1.1);
+    }
+}
+
+.disable-scroll {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}

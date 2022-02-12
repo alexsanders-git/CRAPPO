@@ -1,0 +1,19 @@
+.footer-menu__subtitle {
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+}
+
+.footer-menu__item {
+  font-size: 16px;
+  line-height: 38px;
+  color: $gray;
+  transition: color .2s linear;
+
+  &:hover {
+    color: $light-blue;
+  }
+}
+
+@include media(md) {}
